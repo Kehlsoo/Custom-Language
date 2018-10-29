@@ -1,0 +1,9 @@
+CIRCLE;
+RECTANGLE;
+SET_COLOR;
+5;
+2.0;
+2.0
+HI
+blah
+END;
