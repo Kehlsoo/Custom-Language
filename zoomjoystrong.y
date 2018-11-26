@@ -122,6 +122,5 @@ void yyerror(const char* err){
 int main(int argc, char** argv){
   setup();
   yyparse();
-  finish();
 }
 
