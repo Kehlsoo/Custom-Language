@@ -48,7 +48,7 @@ expr:  point
 
 /* Draws a point in the specified position if coordinates are inside window */
 point:	POINT INT INT END_STATEMENT{
-    	if($2 <= WIDTH && $2 >= 0 && $3 <= HEIGHT && $3 > 0){
+    	if($2 <= WIDTH && $2 >= 0 && $3 <= HEIGHT && $3 >= 0){
    			point($2,$3);
   		}
   		else{
