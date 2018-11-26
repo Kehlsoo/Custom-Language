@@ -1,8 +1,6 @@
 %{
 	#include "zoomjoystrong.tab.h"
     #include "zoomjoystrong.h"
-	#include <stdio.h>
-	void exit();
 	int lineNum = 1;
 %}
 
