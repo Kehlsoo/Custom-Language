@@ -7,8 +7,9 @@
 %}
 
 /* datatypes */
-%union { int iVal;
-		float fVal;
+%union { 
+	int iVal;
+	float fVal;
 		}
 
 /* declarations */
@@ -46,8 +47,7 @@ expr:  point
 ;
 
 /* Draws a point in the specified position if coordinates are inside window */
-point:	POINT INT INT END_STATEMENT
-    {
+point:	POINT INT INT END_STATEMENT{
     	if($2 <= WIDTH && $2 >= 0 && $3 <= HEIGHT && $3 > 0){
    			point($2,$3);
   		}
@@ -58,8 +58,7 @@ point:	POINT INT INT END_STATEMENT
 ;
 
 /* Draws a circle in the specified position if coordinates are inside window */
-circle:	CIRCLE INT INT INT END_STATEMENT
-	{
+circle:	CIRCLE INT INT INT END_STATEMENT{
 		if(WIDTH-$2 >= $4 && $2 >= $4 && $3 >= $4 && HEIGHT-$3 >= $4  && $4 >= 0){ 
     		circle($2,$3,$4);
   		}
@@ -70,8 +69,7 @@ circle:	CIRCLE INT INT INT END_STATEMENT
 ;
 
 /* Draws a line in the specified position if coordinates are inside window */
-line:	LINE INT INT INT INT END_STATEMENT
-	{
+line:	LINE INT INT INT INT END_STATEMENT{
 		if($2 <= WIDTH && $2 >= 0 && $3 <= HEIGHT && $3 >= 0 && $4 <= WIDTH && $4 >= 0 && $5 <= HEIGHT && $5 >= 0){
    			line($2,$3,$4,$5);
   		}
@@ -82,9 +80,7 @@ line:	LINE INT INT INT INT END_STATEMENT
 ;
 
 /* Sets the color if the color values are within range */
-set_color:  SET_COLOR INT INT INT END_STATEMENT
-	{
-
+set_color:  SET_COLOR INT INT INT END_STATEMENT{
 		if($2 <= 255 && $2 >= 0 && $3 <= 255 && $3 >= 0 && $4 <= 255 && $4 >= 0){
     		set_color($2,$3,$4);
   		}
@@ -94,8 +90,7 @@ set_color:  SET_COLOR INT INT INT END_STATEMENT
 	}
 
 /* Draws a rectangle in the specified position if coordinates are inside window */
-rectangle:  RECTANGLE INT INT INT INT END_STATEMENT
-	{
+rectangle:  RECTANGLE INT INT INT INT END_STATEMENT {
 		if($2 + $4 <= WIDTH && $2 + $4 >= 0 && $3 + $5 <= HEIGHT && $3 + $5 >= 0){ 
    			rectangle($2,$3,$4,$5);
   		}
