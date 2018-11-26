@@ -12,15 +12,18 @@
 		}
 
 /* declarations */
-%token END
+//tokens
+%token POINT
+%token LINE
 %token CIRCLE
 %token RECTANGLE
 %token SET_COLOR
 %token INT
 %token FLOAT
 %token END_STATEMENT
-%token POINT
-%token LINE
+%token END
+
+//types
 %type<iVal> INT
 %type<fVal> FLOAT
 
